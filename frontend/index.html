@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="button">Send Request</button>
+    <p>Open up the console to see if it worked...</p>
+    <script>
+      const button = document.getElementById("button");
+      button.addEventListener("click", handleClick);
+
+      async function handleClick() {
+        const data = await postData("api/fetchData", {
+          answer: 42,
+        });
+
+        console.log(data);
+      }
+
+      async function postData(url = "", data = {}) {
+        const response = await fetch(url, {
+          method: "POST", // *GET, POST, PUT, DELETE, etc.
+
+          headers: {
+            "Content-Type": "application/json",
+          },
+
+          body: JSON.stringify(data),
+        });
+        return response.json();
+      }
+    </script>
+  </body>
+</html>
