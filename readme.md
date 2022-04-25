@@ -10,8 +10,8 @@ git clone https://github.com/jameshenegan/vanilla-js-post-to-flask-api.git
 
 sudo apt install nginx
 sudo ufw allow 'Nginx HTTP'
-vim site-config.nginx
 
+cd vanilla-js-post-to-flask-api
 cp site-config.nginx /etc/nginx/sites-available/site-config.nginx
 sudo cp site-config.nginx /etc/nginx/sites-available/site-config.nginx
 sudo ln -s /etc/nginx/sites-available/site-config.nginx /etc/nginx/sites-enabled/site-config.nginx
