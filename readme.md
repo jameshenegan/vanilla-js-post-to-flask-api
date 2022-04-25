@@ -1,3 +1,8 @@
+The purpose of this project is set up Nginx on an Ubuntu server.
+
+Ngnix will serve a static web page. The web page will be able to make a POST request to a Flask API.
+
+```
 sudo apt update
 sudo ufw enable
 sudo ufw allow ssh
@@ -21,3 +26,4 @@ vim app.py
 ls
 python3 app.py
 home/ubuntu/.local/bin/gunicorn -b 0.0.0.0:5000 wsgi:app
+```
